@@ -13,20 +13,17 @@ using namespace std;
 
 int main()
 {
+	string firstName, lastName;
+	int score = 0;
 	fstream inputStream;
 
-	inputStream.open("player.txt");
+	inputStream.open("playerInfo.txt");
+	inputStream >> firstName >> lastName;
+	inputStream >> score;
 
-	int numOfScores = 0;
-	inputStream >> numOfScores;
-	for (int i = 0; i < numOfScores; i++)
-	{
-		string name = { 0 };
-		int score = 0;
-		inputStream >> name;
-		inputStream >> score;
-		cout << name << ", " << score << endl;
-	}
+	cout << "Full Name: " << firstName << " " << lastName << endl;
+	cout << "Score: " << score << endl;
+
 	inputStream.close();
 	return 0;
 }
